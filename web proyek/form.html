@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran Profesional</title>
+    <!-- Font Google -->
+    <link href="[https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap)" rel="stylesheet">
+    <!-- Menghubungkan ke CSS External -->
+    <link rel="stylesheet" href="form.css"> 
+</head>
+<body>
+
+    <div class="container">
+        <h1>Registrasi Akun</h1>
+
+        <form method="post" action="dev.html">
+            
+            <!-- Nama -->
+            <div class="form-group">
+                <label for="fullName">Nama Lengkap</label>
+                <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Minimal 4 huruf" minlength="4" required />
+            </div>
+
+            <!-- Grid untuk Umur dan Tanggal Lahir -->
+            <div class="row-grid">
+                <div class="form-group">
+                    <label for="umur">Umur</label> 
+                    <input type="number" id="umur" name="umur" class="form-control" placeholder="Usia" /> 
+                </div>
+                <div class="form-group">
+                    <label for="tanggalLahir">Tanggal Lahir</label>
+                    <input type="date" id="tanggalLahir" name="tanggalLahir" class="form-control" max="2025-11-25" required/> 
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Alamat Email</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="nama@email.com" required />
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Kombinasi kuat" required maxlength="10"> 
+            </div>
+
+            <!-- Upload Foto dengan Preview -->
+            <div class="form-group">
+                <label for="foto">Foto Profil</label>
+                <!-- accept="image/*" membatasi agar user hanya bisa pilih gambar -->
+                <input type="file" id="foto" name="foto" class="form-control" accept="image/*" required/>
+                
+                <!-- Tag img kosong untuk preview. Style inline memastikan gambar responsif -->
+                <img id="previewFoto" src="#" alt="Preview Foto Anda" style="display: none; margin-top: 15px; max-width: 100%; border-radius: 8px; border: 1px solid #cbd5e1;">
+            </div>
+
+            <!-- Jenis Kelamin -->
+            <div class="form-group">
+                <label>Jenis Kelamin</label>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <input type="radio" id="lakiLaki" name="gender" value="Laki-Laki" required/>
+                        <label for="lakiLaki">Laki-Laki</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="perempuan" name="gender" value="Perempuan"/>
+                        <label for="perempuan">Perempuan</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jam & Warna -->
+            <div class="row-grid">
+                <div class="form-group">
+                    <label for="jam">Jam Tidur</label>
+                    <input type="time" id="jam" name="jamTidur" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="warna">Warna Favorit</label>
+                    <!-- ID 'warna' ini akan dibaca oleh script.js -->
+                    <input type="color" id="warna" name="warna" class="form-control color-input" value="#f1f5f9">
+                </div>
+            </div>
+
+            <!-- Hobi -->
+            <div class="form-group">
+                <label>Hobi (Pilih salah satu)</label>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <input type="radio" id="hobiMembaca" name="hobi" value="Membaca"/>
+                        <label for="hobiMembaca">Membaca</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="hobiGaming" name="hobi" value="Gaming"/> 
+                        <label for="hobiGaming">Gaming</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="hobiNonton" name="hobi" value="Nonton"/>
+                        <label for="hobiNonton">Nonton</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="hobiOlahraga" name="hobi" value="Berolahraga"/>
+                        <label for="hobiOlahraga">Olahraga</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="hobiMenggambar" name="hobi" value="Menggambar"/>
+                        <label for="hobiMenggambar">Gambar</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="hobiBernyanyi" name="hobi" value="Bernyanyi"/>
+                        <label for="hobiBernyanyi">Menyanyi</label>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="privacy-section">
+                <label class="kebijakan-title">Kebijakan & Privasi</label>
+                
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="persetujuan1" name="persetujuanBaca" value="ya" required/>
+                    <label for="persetujuan1">Saya telah membaca, memahami, dan menyetujui seluruh kebijakan privasi serta syarat dan ketentuan yang berlaku di platform ini.</label>
+                </div>
+
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="persetujuan2" name="persetujuanPromosi" value="ya"/>
+                    <label for="persetujuan2">Saya setuju menerima email promosi dan info terbaru.</label>
+                </div>
+
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="persetujuan3" name="persetujuanAnonim" value="ya"/>
+                    <label for="persetujuan3">Izinkan penggunaan data anonim untuk analisis produk.</label>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">DAFTAR SEKARANG</button>
+        </form>
+    </div>
+
+    <!-- Menghubungkan ke File JavaScript External -->
+    <script src="script.js"></script>
+
+</body>
+</html>
