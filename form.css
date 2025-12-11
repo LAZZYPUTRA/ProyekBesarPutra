@@ -1,0 +1,231 @@
+/* ========================================= */
+/* 1. RESET & VARIABEL DASAR */
+/* ========================================= */
+:root {
+    --primary: #2563eb;       /* Biru Profesional */
+    --primary-hover: #1d4ed8;
+    --bg-body: #f1f5f9;       /* Abu-abu sangat muda */
+    --bg-card: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border: #cbd5e1;
+    --radius: 12px;
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* KUNCI: Mencegah elemen melebar keluar batas */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/*2. KARTU CONTAINER (RESPONSIF)*/
+.container {
+    background-color: var(--bg-card);
+    width: 100%;
+    max-width: 550px;
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border-top: 5px solid var(--primary);
+}
+
+h1 {
+    text-align: center;
+    color: var(--text-main);
+    margin-bottom: 30px;
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+/* ========================================= */
+/* 3. FORM GROUPS & INPUT TEKS */
+/* ========================================= */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Helper Class untuk baris dengan 2 kolom (Umur & Tgl Lahir) */
+.row-grid {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-main);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background-color: #f8fafc;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* Input khusus warna dan file */
+.color-input {
+    padding: 2px; 
+    height: 48px;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    padding: 10px;
+    background: #fff;
+}
+
+/* ========================================= */
+/* 4. GRID & ALIGNMENT */
+/* ========================================= */
+
+/* Layout Grid untuk Hobi dan Gender */
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
+    gap: 12px;
+    margin-top: 8px;
+}
+
+/* Wrapper untuk setiap item pilihan */
+.option-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.option-item:hover {
+    background-color: #f1f5f9;
+}
+
+.option-item input[type="radio"],
+.option-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary);
+    flex-shrink: 0;
+    cursor: pointer;
+    margin: 0;
+}
+
+.option-item label {
+    margin: 0;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+/* ========================================= */
+/* 5. KEBIJAKAN PRIVASI */
+/* ========================================= */
+.privacy-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border);
+}
+
+.kebijakan-title {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    margin-top: 3px; 
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    accent-color: var(--primary);
+}
+
+.checkbox-wrapper label {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+/* ========================================= */
+/* 6. TOMBOL SUBMIT */
+/* ========================================= */
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.1s, background-color 0.2s;
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.submit-btn:active {
+    transform: translateY(1px);
+}
+
+/* ========================================= */
+/* 7. RESPONSIVE MOBILE */
+/* ========================================= */
+@media (max-width: 480px) {
+    .container {
+        padding: 25px 20px;
+    }
+    
+    .options-grid {
+        grid-template-columns: 1fr; 
+    }
+}
